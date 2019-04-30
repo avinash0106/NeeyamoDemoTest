@@ -27,25 +27,21 @@
 
 <h1>Enter Student details</h1>
 <form>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control-plaintext" id="staticEmail" value="email@example.com">
-    </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
   </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-    </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Course</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Course">
   </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<mak:newForm type="general.Person" action="index.jsp">
-Name: <mak:input field="name" /><br/>
-Surname: <mak:input field="surname" />
-<mak:submit/>
-</mak:newForm>
-
 <h1>List of persons</h1>
 <mak:list from="general.Person p">
   <mak:value expr="p.name + ' ' + p.surname" /><br/>
