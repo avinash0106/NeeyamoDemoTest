@@ -8,6 +8,13 @@
   <version>4.0-SNAPSHOT</version>
   <name>webapps</name>
   <url>http://maven.apache.org</url>
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-83-194.ec2.internal-snapshots</name>
+        <url>http://3.84.99.55:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
 
   <properties>
     <!--
@@ -91,7 +98,58 @@
         <artifactId>sonar-maven-plugin</artifactId>
         <version>3.6.0.1398</version>
       </plugin>
-
+     
+     <plugin>
+        <artifactId>Maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+     </plugin>
+     <plugin>
+        <groupId>org.apache.Maven.plugins</groupId>
+        <artifactId>Maven-jar-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <archive>
+             <index>true</index>
+             <manifest>
+                <addClasspath>true</addClasspath>
+             </manifest>
+             <manifestEntries>
+                <Implementation-Version>${build.number}</Implementation-Version>
+             </manifestEntries>
+          </archive>
+        </configuration>
+     </plugin>
+      <plugin>
+            <groupId>org.jfrog.buildinfo</groupId>
+            <artifactId>artifactory-maven-plugin</artifactId>
+            <version>2.2.1</version>
+            <inherited>false</inherited>
+            <executions>
+                <execution>
+                    <id>build-info</id>
+                    <goals>
+                        <goal>publish</goal>
+                    </goals>
+                    <configuration>
+                        <deployProperties>
+                            <gradle>awesome</gradle>
+                            <review.team>qa</review.team>
+                        </deployProperties>
+                        <publisher>
+                            <contextUrl>http://3.84.99.55:8081/artifactory</contextUrl>
+    <username>admin</username>
+    <password>sananaaz@03</password>
+                            <repoKey>libs-release-local</repoKey>
+                            <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+                        </publisher>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
       <!-- Embedded Tomcat (pachelloookage tomcat:run) -->
       <!-- Standalone Tomcat (package tomcat:deploy) -->
       <plugin>
