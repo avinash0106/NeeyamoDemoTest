@@ -12,7 +12,7 @@ RUN yum -y install java
 RUN java -version
 
 WORKDIR /opt/tomcat/webapps
-COPY target/durga.war
+COPY target/durga.war durga.war
 
 EXPOSE 8080
 
