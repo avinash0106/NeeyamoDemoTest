@@ -140,9 +140,9 @@
                             <review.team>qa</review.team>
                         </deployProperties>
                         <publisher>
-                            <contextUrl>http://3.84.99.55:8081/artifactory</contextUrl>
+                            <contextUrl>http://3.84.115.192:8081/artifactory</contextUrl>
     <username>admin</username>
-    <password>sananaaz@03</password>
+    <password>Prakash@03</password>
                             <repoKey>libs-release-local</repoKey>
                             <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
                         </publisher>
