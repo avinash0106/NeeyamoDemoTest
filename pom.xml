@@ -11,8 +11,8 @@
 <distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>ip-172-31-83-194.ec2.internal-snapshots</name>
-        <url>http://3.84.99.55:8081/artifactory/libs-snapshot-local</url>
+        <name>ip-172-31-46-141.ec2.internal-snapshots</name>
+        <url>http://3.84.115.192:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
 </distributionManagement>
 
