@@ -25,7 +25,7 @@
   </div>
 </nav>
 
-<h1>Enter employe details</h1>
+<h1>Enter student details</h1>
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
