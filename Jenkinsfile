@@ -30,5 +30,10 @@ pipeline {
             sh 'docker push avis1418/mywebbapp'
         }
       }
+        stage('Docker-Run') {
+          steps {
+            sh 'ssh -i /home/centos/key.pem centos@34.201.39.114 docker --version'
+        }
+      }
       }  
 }
