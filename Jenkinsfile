@@ -32,7 +32,7 @@ pipeline {
       }
         stage('Docker-Run') {
           steps {
-            sh 'ssh -o "StrictHostKeyChecking=no" -i /home/centos/key.pem centos@34.201.39.114 docker --version'
+            sh 'ssh -o "StrictHostKeyChecking=no" -i /home/centos/key.pem centos@34.201.39.114 docker run -it -p 8080:8080 -d --name myapp avis1418/mywebbapp'
         }
       }
       }  
