@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Docker-Build') {
           steps {
-            sh 'docker build -t avis1418/mywebbapp .'
+            sh 'docker build -t avis1418/mywebbapp:1.0.0 .'
         }
       }
         stage('Docker-Push') {
