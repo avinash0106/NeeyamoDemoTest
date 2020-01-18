@@ -16,8 +16,7 @@ Surname: <mak:input field="surname" />
 <mak:list from="general.Person p">
   <mak:value expr="p.name + ' ' + p.surname" /><br/>
 </mak:list>
-
-<br />
+<br/>
 <a href="index.jspx">View source</a>
 </body>
 </html>
