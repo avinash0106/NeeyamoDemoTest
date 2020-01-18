@@ -27,7 +27,7 @@ pipeline {
       }
         stage('Docker-Push') {
           steps {
-            sh 'docker push avis1418/mywebbapp .'
+            sh 'docker push avis1418/mywebbapp'
         }
       }
       }  
