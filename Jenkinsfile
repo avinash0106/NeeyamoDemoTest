@@ -15,13 +15,12 @@ pipeline {
             sh 'mvn clean package'
           }
         }
-        stage('Sonar-Publish') {
-          steps {
-            withSonarQubeEnv('sonarqube'){
-                sh 'mvn sonar:sonar'
-          }
-          }
-        }
+stage('SonarQube analysis') {
+    def scannerHome = tool 'SonarScanner 4.0';
+    withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
         stage('Docker-Build') {
           steps {
             sh 'docker build -t avis1418/mywebbapp:1.0.0 .'
