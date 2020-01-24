@@ -3,7 +3,7 @@ pipeline {
   tools {
     jdk 'java'
     maven 'maven'
-    scannerHome 'SonarScanner 4.2.0'
+    scannerHome 'SonarQubeScanner'
       }
       stages{
         stage('Clone') {
