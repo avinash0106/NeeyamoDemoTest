@@ -17,7 +17,9 @@ pipeline {
         }
         stage('Sonar-Publish') {
           steps {
+            withSonarQubeEnv('sonarqube'){
                 sh 'mvn sonar:sonar'
+          }
           }
         }
         stage('Docker-Build') {
