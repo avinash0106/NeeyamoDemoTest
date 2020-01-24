@@ -17,7 +17,9 @@ pipeline {
         }
         stage('Sonar-Publish') {
           steps {
-            sh 'mvn sonar:sonar -Dsonar.host.url=http://3.84.156.70:9000/ -Dsonar.login=1f331b9d2ce09b7d610c6c7103c67faf9f034258'
+            withSonarQubeEnv('My SonarQube Server') {
+                sh 'mvn sonar:sonar'
+              }
           }
         }
         stage('Docker-Build') {
